@@ -1,6 +1,8 @@
 import React from "react";
 
 function CreateNote({TextHandeler,SaveHandler,inputText}) {
+  const charlimit = 200;
+  const charleft = charlimit - inputText.length
   return (
     <>
       <div className="note">
@@ -11,10 +13,10 @@ function CreateNote({TextHandeler,SaveHandler,inputText}) {
             value={inputText}
             onChange={TextHandeler}
             placeholder="Type....."
-            maxLength={1000}
+            maxLength={200}
           ></textarea>
           <div className="note_footer">
-            <span>Left</span>
+            <span>Left: {charleft}</span>
             <button className="note_save" onClick={SaveHandler}>Save</button>
           </div>
         </div>
